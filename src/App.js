@@ -1,16 +1,31 @@
-import Topbar from "./components/topbar/Topbar";
-import Sidebar from "./components/sidebar/Sidebar";
 import Home from "./pages/home/Home";
-import "./app.css";
+import Login from "./pages/login/Login";
+import List from "./pages/list/List";
+import New from "./pages/new/New";
+import Single from "./pages/single/Single";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <Topbar />
-      <div className="container">
-        <Sidebar />
-        <Home />
-      </div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/">
+            <Route index element={<Home />} />
+            <Route path="login" element={<Login />} />
+            <Route path="users">
+              <Route index element={<List />} />
+              <Route path=":userId" element={<Single />} />
+              <Route path="new" element={<New />} />
+            </Route>
+            <Route path="products">
+              <Route index element={<List />} />
+              <Route path=":productId" element={<Single />} />
+              <Route path="new" element={<New />} />
+            </Route>
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
