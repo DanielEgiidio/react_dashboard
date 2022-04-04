@@ -6,9 +6,11 @@ import Navbar from "../../components/navbar/Navbar";
 const Home = () => {
   return (
     <div className="home">
-      <Navbar />
       <Sidebar />
-      <div className="homeContainer">container</div>
+      <div className="homeContainer">
+        <Navbar />
+        Home Container
+      </div>
     </div>
   );
 };
