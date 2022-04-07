@@ -1,4 +1,4 @@
-import "./List.scss";
+import "./TableList.scss";
 
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -67,7 +67,7 @@ const List = () => {
       <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
         <TableHead>
           <TableRow>
-            <TableCell className="tableCell">Rastrear ID</TableCell>
+            <TableCell className="tableCell">ID</TableCell>
             <TableCell className="tableCell">Produto</TableCell>
             <TableCell className="tableCell">Cliente</TableCell>
             <TableCell className="tableCell">Data</TableCell>
