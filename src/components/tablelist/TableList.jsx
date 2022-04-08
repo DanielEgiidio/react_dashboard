@@ -44,7 +44,7 @@ const List = () => {
       id: 2357741,
       product: "Razer Blade 15",
       img: "https://m.media-amazon.com/images/I/71wF7YDIQkL._AC_UY327_FMwebp_QL65_.jpg",
-      customer: "Joana Smith",
+      customer: "Joana Doe",
       date: "1 Março",
       amount: 920,
       method: "Online",
