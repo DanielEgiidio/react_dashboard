@@ -11,30 +11,42 @@ import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 import SettingsSystemDaydreamOutlinedIcon from "@mui/icons-material/SettingsSystemDaydreamOutlined";
 import PsychologyOutlinedIcon from "@mui/icons-material/PsychologyOutlined";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
+import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { DarkModeContext } from "../../context/darkModeContext";
 
 const Sidebar = () => {
+  const { dispatch } = useContext(DarkModeContext);
   return (
     <div className="sidebar">
       <div className="top">
-        <span className="logo">Admin Dashboard</span>
+        <Link to="/" style={{ textDecoration: "none" }}>
+          <span className="logo">Admin Dashboard</span>
+        </Link>
       </div>
       <hr />
       <div className="center">
         <ul>
           <p className="title">PRINCIPAL</p>
-          <li>
-            <DashboardIcon className="icon" />
-            <span>DashBoard</span>
-          </li>
+          <Link to="/" style={{ textDecoration: "none" }}>
+            <li>
+              <DashboardIcon className="icon" />
+              <span>DashBoard</span>
+            </li>
+          </Link>
           <p className="title">lISTA</p>
-          <li>
-            <PersonOutlineIcon className="icon" />
-            <span>Usuários</span>
-          </li>
-          <li>
-            <StoreIcon className="icon" />
-            <span>Produtos</span>
-          </li>
+          <Link to="/users" style={{ textDecoration: "none" }}>
+            <li>
+              <PersonOutlineIcon className="icon" />
+              <span>Usuários</span>
+            </li>
+          </Link>
+          <Link to="/products" style={{ textDecoration: "none" }}>
+            <li>
+              <StoreIcon className="icon" />
+              <span>Produtos</span>
+            </li>
+          </Link>
           <li>
             <CreditCardIcon className="icon" />
             <span>Pedidos</span>
@@ -77,8 +89,14 @@ const Sidebar = () => {
         </ul>
       </div>
       <div className="bottom">
-        <div className="colorOptions"></div>
-        <div className="colorOptions"></div>
+        <div
+          className="colorOptions"
+          onClick={() => dispatch({ type: "LIGHT" })}
+        ></div>
+        <div
+          className="colorOptions"
+          onClick={() => dispatch({ type: "DARK" })}
+        ></div>
       </div>
     </div>
   );
